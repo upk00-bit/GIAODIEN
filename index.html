@@ -1,4 +1,200 @@
 <!DOCTYPE html>
+<html lang="vi" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lô Tô Online</title>
+<script>
+const ticketColors = [
+  { name: "Cam",    key: "orange", bg: "bg-orange-400", badge: "bg-orange-600 text-white" },
+  { name: "Vàng",   key: "yellow", bg: "bg-yellow-300", badge: "bg-yellow-500 text-black" },
+  { name: "Hồng",   key: "pink",   bg: "bg-pink-400", badge: "bg-pink-600 text-white" },
+  { name: "Đỏ",     key: "red",    bg: "bg-red-500", badge: "bg-red-700 text-white" },
+  { name: "Xanh lá",key: "green",  bg: "bg-green-400", badge: "bg-green-600 text-white" },
+  { name: "Xanh dương", key: "blue", bg: "bg-blue-400", badge: "bg-blue-600 text-white" },
+  { name: "Nâu",    key: "brown",  bg: "bg-amber-700", badge: "bg-amber-900 text-white" },
+  { name: "Tím",    key: "purple", bg: "bg-purple-400", badge: "bg-purple-600 text-white" }
+];
+
+const ticketContainer = document.getElementById("ticketButtons");
+
+let ticketIndex = 1;
+
+ticketColors.forEach(color => {
+  for (let i = 1; i <= 2; i++) {
+    const ticketId = `${color.key}-${i}`;
+
+    const btn = document.createElement("div");
+    btn.className = `ticket ${color.bg} text-black`;
+    btn.onclick = () => selectTicket(ticketId);
+
+    btn.innerHTML = `
+      <div class="ticket-badge ${color.badge}">
+        ${color.name}
+      </div>
+      <div class="ticket-title">Ticket</div>
+      <div class="ticket-id">#${ticketIndex.toString().padStart(2,"0")}</div>
+      <div class="text-[10px] opacity-70">
+        Bù trừ 1–90
+      </div>
+    `;
+
+    ticketContainer.appendChild(btn);
+    ticketIndex++;
+  }
+});
+</script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .loto-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 4px;
+    }
+    .number-cell {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .selected {
+      background: #facc15 !important;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- ================= SCREEN 1: CHỌN TICKET ================= -->
+<div id="screen-ticket" class="min-h-screen flex flex-col items-center justify-center px-4">
+
+  <h1 class="text-3xl font-extrabold mb-2">🎟️ Chọn Ticket Lô Tô</h1>
+  <p class="text-sm text-gray-500 mb-6">16 tờ • 8 màu • Bù trừ đủ 1–90</p>
+
+  <div id="ticketButtons" class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl"></div>
+
+</div>
+
+<!-- ================= SCREEN 2: GAME ================= -->
+<div id="screen-game" class="hidden min-h-screen p-4">
+
+  <div class="flex justify-between items-center mb-4">
+    <h2 id="ticketName" class="text-xl font-extrabold"></h2>
+    <button onclick="location.reload()" class="text-sm underline">Đổi ticket</button>
+  </div>
+
+  <!-- Ticket -->
+  <div class="bg-white p-3 rounded-xl shadow-md">
+    <div id="lotoGrid" class="loto-grid"></div>
+  </div>
+
+  <!-- KINH -->
+  <button
+    onclick="checkKinh()"
+    class="mt-4 w-full bg-yellow-400 text-black font-extrabold py-3 rounded-xl text-lg"
+  >
+    🎉 KINH!
+  </button>
+
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+/* ---------- DATA ---------- */
+const colors = [
+  "Cam","Vàng","Hồng","Đỏ",
+  "Xanh lá","Xanh dương","Nâu","Tím"
+];
+
+const tickets = [];
+let ticketCounter = 1;
+
+// tạo 16 ticket (logic bù trừ sẽ làm tiếp)
+colors.forEach(color => {
+  tickets.push({ id: ticketCounter++, name: color + " A", color });
+  tickets.push({ id: ticketCounter++, name: color + " B", color });
+});
+
+/* ---------- RENDER TICKET LIST ---------- */
+const ticketButtons = document.getElementById("ticketButtons");
+
+tickets.forEach(t => {
+  const div = document.createElement("div");
+  div.className = "bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition";
+  div.innerHTML = `
+    <div class="text-xs uppercase text-gray-500">${t.color}</div>
+    <div class="text-2xl font-extrabold">#${String(t.id).padStart(2,"0")}</div>
+  `;
+  div.onclick = () => selectTicket(t);
+  ticketButtons.appendChild(div);
+});
+
+/* ---------- SELECT TICKET ---------- */
+function selectTicket(ticket) {
+  document.getElementById("screen-ticket").classList.add("hidden");
+  document.getElementById("screen-game").classList.remove("hidden");
+  document.getElementById("ticketName").innerText = "Ticket " + ticket.name;
+  renderTicket();
+}
+
+/* ---------- RENDER 9x9 GRID ---------- */
+function renderTicket() {
+  const grid = document.getElementById("lotoGrid");
+  grid.innerHTML = "";
+
+  for (let row = 0; row < 9; row++) {
+    let filled = 0;
+    for (let col = 0; col < 9; col++) {
+
+      const cell = document.createElement("div");
+      cell.className = "number-cell bg-gray-200";
+
+      if (filled < 5 && Math.random() > 0.4) {
+        const min = col * 10 + 1;
+        const max = col === 8 ? 90 : col * 10 + 9;
+        cell.innerText = Math.floor(Math.random() * (max - min + 1)) + min;
+        cell.onclick = () => cell.classList.toggle("selected");
+        filled++;
+      } else {
+        cell.innerHTML = "&nbsp;";
+      }
+
+      grid.appendChild(cell);
+    }
+  }
+}
+
+/* ---------- CHECK KINH ---------- */
+function checkKinh() {
+  const cells = [...document.querySelectorAll(".number-cell")];
+  for (let r = 0; r < 9; r++) {
+    const row = cells.slice(r * 9, r * 9 + 9);
+    const selected = row.filter(c => c.classList.contains("selected"));
+    if (selected.length === 5) {
+      alert("🎉 KINH HÀNG " + (r + 1));
+      return;
+    }
+  }
+  alert("Chưa đủ 5 số trên hàng nào");
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
