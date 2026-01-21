@@ -1,244 +1,155 @@
 <!DOCTYPE html>
-<html class="light" lang="vi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Loto Gameplay with Side Chat</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#f0f50a",
-                        "background-light": "#f8f8f5",
-                        "background-dark": "#1a1a10",
-                        "loto-blue": "#2563eb",
-                        "warning-red": "#fee2e2"
-                    },
-                    fontFamily: {
-                        display: "Plus Jakarta Sans"
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.125rem",
-                        lg: "0.25rem",
-                        xl: "0.5rem",
-                        full: "0.75rem"
-                    }
-                }
-            }
-        };
-    </script>
-<style type="text/tailwindcss">
-        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow: hidden; }
-        .loto-grid {
-            display: grid;
-            grid-template-columns: repeat(9, 1fr);
-            gap: 2px;
-        }
-        .number-cell {
-            aspect-ratio: 1/1.1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.875rem;
-            transition: all 0.2s ease;
-        }
-        .chat-container::-webkit-scrollbar {
-            width: 4px;
-        }
-        .chat-container::-webkit-scrollbar-thumb {
-            background: #e2e8f0;
-            border-radius: 10px;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loto Ticket</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .grid-9 {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 4px;
+    }
+    .cell {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .cell.empty {
+      background: transparent;
+      cursor: default;
+    }
+    .cell.selected {
+      background: #facc15;
+      color: #000;
     }
   </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark h-screen text-[#111716] dark:text-white font-display flex flex-col">
-<header class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm">
-<span class="material-symbols-outlined">arrow_back</span>
-</div>
-<div>
-<h1 class="font-bold text-base leading-none">Table #402</h1>
-<p class="text-[10px] text-gray-500 dark:text-gray-400 font-medium uppercase tracking-tighter">9x9 Vietnamese Style</p>
-</div>
-</div>
-<div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full shadow-sm">
-<span class="material-symbols-outlined text-loto-blue text-lg">group</span>
-<span class="font-bold text-sm">1.2k</span>
-</div>
-</header>
-<div class="flex flex-1 overflow-hidden">
-<main class="w-[60%] p-3 space-y-3 overflow-y-auto border-r border-gray-200 dark:border-gray-800">
-<div class="grid grid-cols-2 gap-2">
-<div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-sm border-b-2 border-primary/40">
-<p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Calling</p>
-<div class="flex items-end gap-1">
-<span class="text-2xl font-extrabold text-[#111716] dark:text-white">45</span>
-<span class="text-[8px] font-bold mb-1 px-1.5 py-0.5 bg-primary/20 text-black rounded">NEW</span>
-</div>
-</div>
-<div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-sm border-b-2 border-loto-blue/40">
-<p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Last</p>
-<div class="flex items-end gap-1">
-<span class="text-2xl font-extrabold text-loto-blue">12</span>
-<span class="material-symbols-outlined text-sm mb-1 text-loto-blue/50">history</span>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-gray-800 p-1.5 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
-<div class="bg-loto-blue text-white py-1 px-3 rounded-t-lg mb-1 flex justify-between items-center">
-<span class="text-[9px] font-black uppercase tracking-widest">B-001-A</span>
-<div class="flex gap-1">
-<div class="w-1.5 h-1.5 rounded-full bg-white"></div>
-<div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>
-</div>
-</div>
-<div class="loto-grid">
-<div class="number-cell bg-primary text-black rounded shadow-sm">01</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">23</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">48</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">62</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">82</div>
-<div class="col-span-9 grid grid-cols-9 gap-1 bg-[#fee2e2] dark:bg-red-900/30 rounded-md p-1 -mx-0.5">
-<div class="number-cell bg-gray-200/50 dark:bg-gray-900/30 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm">12</div>
-<div class="number-cell bg-gray-200/50 dark:bg-gray-900/30 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm">34</div>
-<div class="number-cell bg-gray-200/50 dark:bg-gray-900/30 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm">51</div>
-<div class="number-cell bg-gray-200/50 dark:bg-gray-900/30 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm">75</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">90</div>
-</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">05</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">27</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">39</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">55</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm">79</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">18</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">30</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">42</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">68</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">88</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">09</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">11</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm">45</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">59</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded">71</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-</div>
-</div>
-<div class="grid grid-cols-1 gap-2">
-<button class="bg-primary text-black font-black py-3 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 text-lg">
-                    KINH!
-                    <span class="material-symbols-outlined">celebration</span>
-</button>
-<button class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white font-bold py-2 rounded-xl flex items-center justify-center gap-2 text-sm">
-<span class="material-symbols-outlined text-base">auto_fix</span>
-                    Auto-fill
-                </button>
-</div>
-<div class="flex justify-around pt-2 text-gray-400 dark:text-gray-500 font-bold text-[9px] uppercase tracking-widest">
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-lg">visibility</span>
-                    Missed
-                </button>
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-lg">style</span>
-                    Ticket
-                </button>
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-lg">help_outline</span>
-                    Rules
-                </button>
-</div>
-</main>
-<aside class="w-[40%] flex flex-col bg-gray-50 dark:bg-[#121212]">
-<div class="p-3 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 flex items-center justify-between">
-<span class="text-xs font-bold uppercase">Live Chat</span>
-<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-</div>
-<div class="flex-1 overflow-y-auto p-3 space-y-4 chat-container">
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5">
-<img alt="User" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAol0nf4AtFXGeYHZ2mpIfCuVF_PmBzsPMUEjhCnFf5xnANOY7WpPlBMuY4XnCJiToTk7Sb4NZ06EPyF9Y134cS5gENLsRQp8XD-Kxr_nqJAGY91dmunE3VaHuIYkxe-AwHfh0GsTJdyJitNIOZP90XaUwDuha4eItx4T6w-rXkqcQrbBVexGA6N8-9uUALUEIah6Pc9kf3vmRDa--ZfK32gAs3owvmEgG6A_VhzVt33B9D_t-1kECCjoDwkgK1wVbflugcC5D2-do"/>
-<span class="text-[10px] font-bold text-loto-blue">Minh Tuấn</span>
-</div>
-<div class="bg-white dark:bg-gray-800 p-2 rounded-2xl rounded-tl-none shadow-sm inline-block max-w-full">
-<p class="text-[11px] leading-tight">Gần kinh rồi mọi người ơi!</p>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5">
-<img alt="User" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhdjHk8WvnqkhRiYKcdt2q9ajjeeySlp675ix6yomHp7zMKn-KUdTJKVDiCj_djpsbuQENHRC-N8nvlrcypCDvoY0dMZRrqcs-NnSRTgBIRJKb1n6r5zI4RJgJatHnvmjwaGhOiXV_MXWUFnjG7XVCuADonMlRc7Tn8dmajdocPo6tH5QrVAIWvB7_-_IZLwqUlm4c78ZCySclH2X2nwkQmU87_zYqj4kXdWtXqiOQQWlKyNJ0T3Qp-_JGCXE06lpqynsF1mBzIds"/>
-<span class="text-[10px] font-bold text-purple-500">Lan Anh</span>
-</div>
-<div class="bg-white dark:bg-gray-800 p-2 rounded-2xl rounded-tl-none shadow-sm inline-block">
-<p class="text-[11px] leading-tight">Đợi số 45 mãi chưa thấy hix 😭</p>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5">
-<img alt="User" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuJrK4X7j6GKhhgZMCnrEd1I15biz1bZFZe-THI91wrBxZS52jsUh5PgW6tmz7oGsd4QSaM-3-pL93g0uOYHCtFpHNq5SHjnQBf4RJBF_ZHcvk_PaWiM01cbllGfsekk7kC6q7picxuT4Jvtl5ITH0V2l8HIqoDxMabeSa_umZnrRDY-sz6GAuuLsIEg6qCKnw0TvSZOiD5HeCe9B4LC9IEGKsQ0Ec6MS8rlu005Qu5k_XfgwfGu6WwZDHSmGXPGgM0LG1Z9_I_b0"/>
-<span class="text-[10px] font-bold text-orange-500">Hùng Cường</span>
-</div>
-<div class="bg-white dark:bg-gray-800 p-2 rounded-2xl rounded-tl-none shadow-sm inline-block">
-<p class="text-[11px] leading-tight">Số 12 ra rồi kìa!</p>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5">
-<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-[8px] font-bold text-black">AD</div>
-<span class="text-[10px] font-bold text-gray-400">System</span>
-</div>
-<div class="bg-primary/10 p-2 rounded-lg border border-primary/20">
-<p class="text-[10px] italic">User @MinhTuấn is near winning!</p>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5">
-<img alt="User" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAol0nf4AtFXGeYHZ2mpIfCuVF_PmBzsPMUEjhCnFf5xnANOY7WpPlBMuY4XnCJiToTk7Sb4NZ06EPyF9Y134cS5gENLsRQp8XD-Kxr_nqJAGY91dmunE3VaHuIYkxe-AwHfh0GsTJdyJitNIOZP90XaUwDuha4eItx4T6w-rXkqcQrbBVexGA6N8-9uUALUEIah6Pc9kf3vmRDa--ZfK32gAs3owvmEgG6A_VhzVt33B9D_t-1kECCjoDwkgK1wVbflugcC5D2-do"/>
-<span class="text-[10px] font-bold text-loto-blue">Minh Tuấn</span>
-</div>
-<div class="bg-white dark:bg-gray-800 p-2 rounded-2xl rounded-tl-none shadow-sm inline-block">
-<p class="text-[11px] leading-tight">🍀🍀🍀</p>
-</div>
-</div>
-</div>
-<div class="p-3 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-800">
-<div class="relative">
-<input class="w-full bg-gray-100 dark:bg-gray-900 border-none rounded-full py-1.5 px-4 text-[11px] focus:ring-1 focus:ring-primary" placeholder="Chat..." type="text"/>
-<button class="absolute right-2 top-1.5 text-loto-blue">
-<span class="material-symbols-outlined text-base">send</span>
-</button>
-</div>
-</div>
-</aside>
+</head>
+
+<body class="bg-gray-100 p-4">
+
+<h1 class="text-xl font-bold mb-3">🎟️ Chọn Ticket</h1>
+
+<div id="ticketButtons" class="grid grid-cols-4 gap-2 mb-4"></div>
+
+<div id="ticketArea" class="bg-white p-4 rounded-xl shadow hidden">
+  <div class="flex justify-between items-center mb-2">
+    <h2 id="ticketTitle" class="font-bold"></h2>
+    <span id="kinhBadge" class="hidden px-2 py-1 text-xs font-black bg-red-500 text-white rounded">
+      KINH!
+    </span>
+  </div>
+
+  <div id="ticketGrid" class="grid-9"></div>
 </div>
 
-</body></html>
+<script>
+/* =========================
+   DATA
+========================= */
+
+const colors = [
+  "orange","yellow","pink","red",
+  "green","blue","brown","purple"
+];
+
+const tickets = [];
+let currentTicket = null;
+
+/* =========================
+   GENERATE TICKETS
+========================= */
+
+function randomPick(arr, n) {
+  return [...arr].sort(() => 0.5 - Math.random()).slice(0, n);
+}
+
+function generateTicket(id, color) {
+  const grid = [];
+
+  for (let row = 0; row < 9; row++) {
+    const rowCells = Array(9).fill(null);
+    const cols = randomPick([...Array(9).keys()], 5);
+
+    cols.forEach(col => {
+      const min = col === 8 ? 80 : col * 10;
+      const max = col === 8 ? 90 : col * 10 + 9;
+      rowCells[col] = Math.floor(Math.random() * (max - min + 1)) + min;
+    });
+
+    grid.push(rowCells);
+  }
+
+  return { id, color, grid };
+}
+
+/* 16 tickets */
+colors.forEach(color => {
+  tickets.push(generateTicket(`${color}-1`, color));
+  tickets.push(generateTicket(`${color}-2`, color));
+});
+
+/* =========================
+   UI
+========================= */
+
+const btnWrap = document.getElementById("ticketButtons");
+const gridWrap = document.getElementById("ticketGrid");
+const area = document.getElementById("ticketArea");
+const title = document.getElementById("ticketTitle");
+const kinh = document.getElementById("kinhBadge");
+
+tickets.forEach(t => {
+  const btn = document.createElement("button");
+  btn.className = `py-2 rounded text-white font-bold bg-${t.color}-500`;
+  btn.textContent = t.id;
+  btn.onclick = () => loadTicket(t);
+  btnWrap.appendChild(btn);
+});
+
+function loadTicket(ticket) {
+  currentTicket = ticket;
+  gridWrap.innerHTML = "";
+  kinh.classList.add("hidden");
+
+  title.textContent = `Ticket ${ticket.id}`;
+  area.classList.remove("hidden");
+
+  ticket.grid.forEach((row, r) => {
+    row.forEach((num, c) => {
+      const cell = document.createElement("div");
+      if (num === null) {
+        cell.className = "cell empty";
+      } else {
+        cell.className = "cell bg-gray-200";
+        cell.textContent = num;
+        cell.onclick = () => {
+          cell.classList.toggle("selected");
+          checkKinh(r);
+        };
+      }
+      gridWrap.appendChild(cell);
+    });
+  });
+}
+
+function checkKinh(rowIndex) {
+  const start = rowIndex * 9;
+  const rowCells = [...gridWrap.children].slice(start, start + 9);
+  const selected = rowCells.filter(c => c.classList.contains("selected")).length;
+
+  if (selected === 5) {
+    kinh.classList.remove("hidden");
+  }
+}
+</script>
+
+</body>
+</html>
