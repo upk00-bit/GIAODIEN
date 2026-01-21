@@ -81,7 +81,7 @@ ticketColors.forEach(color => {
 <div id="screen-ticket" class="min-h-screen flex flex-col items-center justify-center px-4">
 
   <h1 class="text-3xl font-extrabold mb-2">🎟️ Chọn Ticket Lô Tô</h1>
-  <p class="text-sm text-gray-500 mb-6">16 tờ • 8 màu • Bù trừ đủ 1–90</p>
+  <p class="text-sm text-gray-500 mb-6">16 tờ • 8 màu </p>
 
   <div id="ticketButtons" class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl"></div>
 
@@ -123,9 +123,12 @@ let ticketCounter = 1;
 
 // tạo 16 ticket (logic bù trừ sẽ làm tiếp)
 colors.forEach(color => {
-  tickets.push({ id: ticketCounter++, name: color + " A", color });
-  tickets.push({ id: ticketCounter++, name: color + " B", color });
+  const [numsA, numsB] = splitNumbers();
+
+  tickets.push(generateTicketFromNumbers(`${color}-1`, color, numsA));
+  tickets.push(generateTicketFromNumbers(`${color}-2`, color, numsB));
 });
+
 
 /* ---------- RENDER TICKET LIST ---------- */
 const ticketButtons = document.getElementById("ticketButtons");
