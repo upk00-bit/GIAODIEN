@@ -329,9 +329,8 @@ function loadTicket(ticket) {
       } else {
         cell.className = "cell bg-gray-200";
         cell.textContent = num;
-        cell.onclick = () => {
-         cell.onclick = () => {
-  cell.classList.toggle("selected");
+      cell.onclick = () => {
+        cell.classList.toggle("selected");
   checkNearWin();
 };
           checkKinh(r);
