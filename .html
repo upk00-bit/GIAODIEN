@@ -1,0 +1,90 @@
+
+<script>
+/* =========================
+   CORE LOTTO LOGIC
+========================= */
+
+const columnRanges = [
+  [1,9], [10,19], [20,29], [30,39], [40,49],
+  [50,59], [60,69], [70,79], [80,90]
+];
+
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+function createEmptyGrid() {
+  return Array.from({ length: 9 }, () => Array(9).fill(null));
+}
+
+/* =========================
+   GENERATE PAIR (A + B = 1–90)
+========================= */
+
+function generateTicketPair(color) {
+  const numbersA = Array.from({ length: 9 }, () => []);
+  const numbersB = Array.from({ length: 9 }, () => []);
+
+  // Chia số theo cột
+  columnRanges.forEach(([min, max], col) => {
+    const nums = shuffle(
+      Array.from({ length: max - min + 1 }, (_, i) => min + i)
+    );
+
+    const mid = Math.ceil(nums.length / 2);
+    numbersA[col] = nums.slice(0, mid);
+    numbersB[col] = nums.slice(mid);
+  });
+
+  return [
+    {
+      id: `${color}-1`,
+      color,
+      grid: distributeToGrid(numbersA)
+    },
+    {
+      id: `${color}-2`,
+      color,
+      grid: distributeToGrid(numbersB)
+    }
+  ];
+}
+
+/* =========================
+   DISTRIBUTE NUMBERS INTO 9×9
+========================= */
+
+function distributeToGrid(colNumbers) {
+  const grid = createEmptyGrid();
+
+  // Mỗi hàng cần 5 số
+  for (let row = 0; row < 9; row++) {
+    const availableCols = shuffle([...Array(9).keys()]);
+    const selectedCols = availableCols.slice(0, 5);
+
+    selectedCols.forEach(col => {
+      if (colNumbers[col].length > 0) {
+        grid[row][col] = colNumbers[col].pop();
+      }
+    });
+  }
+
+  return grid;
+}
+
+/* =========================
+   CREATE 16 TICKETS
+========================= */
+
+const colors = [
+  "orange","yellow","pink","red",
+  "green","blue","brown","purple"
+];
+
+const tickets = [];
+
+colors.forEach(color => {
+  const pair = generateTicketPair(color);
+  tickets.push(...pair);
+});
+</script>
