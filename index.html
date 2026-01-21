@@ -2,7 +2,7 @@
 <html class="light" lang="vi"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Loto Winning State - KINH!</title>
+<title>Updated Loto Ticket Gameplay</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -14,10 +14,8 @@
                     colors: {
                         primary: "#f0f50a",
                         "background-light": "#f8f8f5",
-                        "background-dark": "#1a1a0d",
+                        "background-dark": "#222210",
                         "loto-blue": "#2563eb",
-                        "win-gold": "#fef3c7",
-                        "win-green": "#22c55e",
                         "warning-red": "#fee2e2"
                     },
                     fontFamily: {
@@ -28,9 +26,6 @@
                         lg: "0.25rem",
                         xl: "0.5rem",
                         full: "0.75rem"
-                    },
-                    animation: {
-                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
@@ -51,25 +46,11 @@
             font-weight: 800;
             font-size: 1.1rem;
             transition: all 0.2s ease;
-        }
-        .win-row-bg {
-            background-color: #fef9c3;
-            box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
-        }
-        .dark .win-row-bg {
-            background-color: #3f3f10;
-        }
-        @keyframes pulse-green {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            50% { transform: scale(1.02); box-shadow: 0 0 20px 10px rgba(34, 197, 94, 0); }
-        }
-        .animate-win-button {
-            animation: pulse-green 2s infinite;
-        }
-    </style>
-<style>
-        body {
-            min-height: max(884px, 100dvh);
+        }.row-near-win {
+            background-color: theme('colors.warning-red');
+            border-radius: 4px;
+            margin: -2px;
+            padding: 2px;
         }
     </style>
 <style>
@@ -89,29 +70,29 @@
 <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">9x9 Vietnamese Style</p>
 </div>
 </div>
-<div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full shadow-sm border border-yellow-400/50">
-<span class="material-symbols-outlined text-yellow-500 text-xl">emoji_events</span>
-<span class="font-bold text-sm">WINNER!</span>
+<div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-xl">group</span>
+<span class="font-bold text-sm">1,248</span>
 </div>
 </div>
 <main class="max-w-md mx-auto p-4 space-y-4">
 <div class="flex gap-3">
 <div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border-b-4 border-primary/40">
-<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 text-center">Calling</p>
-<div class="flex items-center justify-center gap-2">
-<span class="text-4xl font-extrabold text-[#111716] dark:text-white">90</span>
-<span class="text-[10px] font-black px-1.5 py-0.5 bg-green-500 text-white rounded-full uppercase">Win!</span>
+<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Calling</p>
+<div class="flex items-end gap-2">
+<span class="text-4xl font-extrabold text-[#111716] dark:text-white">45</span>
+<span class="text-xs font-bold mb-1.5 px-2 py-0.5 bg-primary/20 text-black rounded">New</span>
 </div>
 </div>
 <div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border-b-4 border-loto-blue/40">
-<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 text-center">Last Number</p>
-<div class="flex items-center justify-center gap-2">
-<span class="text-4xl font-extrabold text-loto-blue">75</span>
-<span class="material-symbols-outlined mb-0.5 text-loto-blue/50">history</span>
+<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Last Number</p>
+<div class="flex items-end gap-2">
+<span class="text-4xl font-extrabold text-loto-blue">12</span>
+<span class="material-symbols-outlined mb-1.5 text-loto-blue/50">history</span>
 </div>
 </div>
 </div>
-<div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-2xl border-2 border-yellow-400 relative overflow-hidden">
+<div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700">
 <div class="bg-loto-blue text-white py-2 px-4 rounded-t-lg mb-2 flex justify-between items-center">
 <span class="text-xs font-black uppercase tracking-widest">Ticket ID: B-001-A</span>
 <div class="flex gap-1">
@@ -120,8 +101,8 @@
 <div class="w-2 h-2 rounded-full bg-white/40"></div>
 </div>
 </div>
-<div class="loto-grid relative">
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">01</div>
+<div class="loto-grid">
+<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">01</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">23</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
@@ -130,16 +111,16 @@
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">62</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">82</div>
-<div class="col-span-9 grid grid-cols-9 gap-[4px] win-row-bg rounded-lg p-1 border-2 border-yellow-400 shadow-inner">
-<div class="number-cell bg-gray-100/50 dark:bg-black/20 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">12</div>
-<div class="number-cell bg-gray-100/50 dark:bg-black/20 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">34</div>
-<div class="number-cell bg-gray-100/50 dark:bg-black/20 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">51</div>
-<div class="number-cell bg-gray-100/50 dark:bg-black/20 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">75</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">90</div>
+<div class="col-span-9 grid grid-cols-9 gap-[4px] bg-red-100/50 dark:bg-red-900/20 rounded-lg p-0.5">
+<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">12</div>
+<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">34</div>
+<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">51</div>
+<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">75</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">90</div>
 </div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">05</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
@@ -148,7 +129,7 @@
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">55</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">79</div>
+<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">79</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">18</div>
@@ -159,17 +140,15 @@
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">68</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">88</div>
-<div class="col-span-9 grid grid-cols-9 gap-[4px] bg-red-100/50 dark:bg-red-900/20 rounded-lg p-0.5">
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">09</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">11</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-black rounded shadow-sm ring-2 ring-primary ring-offset-1 dark:ring-offset-gray-800">45</div>
+<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">45</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">59</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">71</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">15</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">29</div>
@@ -209,32 +188,25 @@
 </div>
 </div>
 <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-<div class="flex flex-col gap-2 flex-1">
-<div class="flex items-center gap-2">
-<img alt="User 1" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAol0nf4AtFXGeYHZ2mpIfCuVF_PmBzsPMUEjhCnFf5xnANOY7WpPlBMuY4XnCJiToTk7Sb4NZ06EPyF9Y134cS5gENLsRQp8XD-Kxr_nqJAGY91dmunE3VaHuIYkxe-AwHfh0GsTJdyJitNIOZP90XaUwDuha4eItx4T6w-rXkqcQrbBVexGA6N8-9uUALUEIah6Pc9kf3vmRDa--ZfK32gAs3owvmEgG6A_VhzVt33B9D_t-1kECCjoDwkgK1wVbflugcC5D2-do"/>
-<p class="text-xs"><span class="font-bold">An:</span> KINH RỒI ANH EM ƠI!!! 🎉</p>
+<div class="flex -space-x-3">
+<img alt="User 1" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAol0nf4AtFXGeYHZ2mpIfCuVF_PmBzsPMUEjhCnFf5xnANOY7WpPlBMuY4XnCJiToTk7Sb4NZ06EPyF9Y134cS5gENLsRQp8XD-Kxr_nqJAGY91dmunE3VaHuIYkxe-AwHfh0GsTJdyJitNIOZP90XaUwDuha4eItx4T6w-rXkqcQrbBVexGA6N8-9uUALUEIah6Pc9kf3vmRDa--ZfK32gAs3owvmEgG6A_VhzVt33B9D_t-1kECCjoDwkgK1wVbflugcC5D2-do"/>
+<img alt="User 2" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhdjHk8WvnqkhRiYKcdt2q9ajjeeySlp675ix6yomHp7zMKn-KUdTJKVDiCj_djpsbuQENHRC-N8nvlrcypCDvoY0dMZRrqcs-NnSRTgBIRJKb1n6r5zI4RJgJatHnvmjwaGhOiXV_MXWUFnjG7XVCuADonMlRc7Tn8dmajdocPo6tH5QrVAIWvB7_-_IZLwqUlm4c78ZCySclH2X2nwkQmU87_zYqj4kXdWtXqiOQQWlKyNJ0T3Qp-_JGCXE06lpqynsF1mBzIds"/>
+<img alt="User 3" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuJrK4X7j6GKhhgZMCnrEd1I15biz1bZFZe-THI91wrBxZS52jsUh5PgW6tmz7oGsd4QSaM-3-pL93g0uOYHCtFpHNq5SHjnQBf4RJBF_ZHcvk_PaWiM01cbllGfsekk7kC6q7picxuT4Jvtl5ITH0V2l8HIqoDxMabeSa_umZnrRDY-sz6GAuuLsIEg6qCKnw0TvSZOiD5HeCe9B4LC9IEGKsQ0Ec6MS8rlu005Qu5k_XfgwfGu6WwZDHSmGXPGgM0LG1Z9_I_b0"/>
+<div class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800 bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-[10px] font-bold">+12</div>
 </div>
-<div class="flex items-center gap-2">
-<img alt="User 2" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhdjHk8WvnqkhRiYKcdt2q9ajjeeySlp675ix6yomHp7zMKn-KUdTJKVDiCj_djpsbuQENHRC-N8nvlrcypCDvoY0dMZRrqcs-NnSRTgBIRJKb1n6r5zI4RJgJatHnvmjwaGhOiXV_MXWUFnjG7XVCuADonMlRc7Tn8dmajdocPo6tH5QrVAIWvB7_-_IZLwqUlm4c78ZCySclH2X2nwkQmU87_zYqj4kXdWtXqiOQQWlKyNJ0T3Qp-_JGCXE06lpqynsF1mBzIds"/>
-<p class="text-xs"><span class="font-bold">Minh:</span> Chúc mừng nha!</p>
-</div>
-</div>
-<button class="bg-primary/20 text-[#111716] dark:text-white font-bold px-4 py-2 rounded-full flex items-center gap-2 hover:bg-primary/30 transition-colors ml-4 shrink-0">
+<button class="bg-primary/20 text-[#111716] dark:text-white font-bold px-4 py-2 rounded-full flex items-center gap-2 hover:bg-primary/30 transition-colors">
 <span class="material-symbols-outlined text-sm">chat_bubble</span>
                 Chat
             </button>
 </div>
-<div class="grid grid-cols-2 gap-4 pt-2">
-<button class="bg-gray-200 dark:bg-gray-700 text-[#111716] dark:text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-2 shadow-sm">
+<div class="grid grid-cols-2 gap-4 pt-4">
+<button class="bg-gray-200 dark:bg-gray-700 text-[#111716] dark:text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2">
 <span class="material-symbols-outlined">auto_fix</span>
                 Auto-fill
             </button>
-<button class="bg-win-green text-white font-black py-5 rounded-2xl shadow-xl shadow-win-green/40 flex flex-col items-center justify-center animate-win-button transform active:scale-95 transition-all">
-<div class="flex items-center gap-2 text-2xl tracking-tighter">
-                    KINH!
-                    <span class="material-symbols-outlined text-2xl">celebration</span>
-</div>
-<span class="text-[10px] uppercase opacity-90 tracking-widest">Claim Victory Now</span>
+<button class="bg-primary text-[#111716] font-black py-4 rounded-xl shadow-lg shadow-primary/40 flex items-center justify-center gap-2 text-xl tracking-tight">
+                KINH!
+                <span class="material-symbols-outlined">celebration</span>
 </button>
 </div>
 <div class="flex justify-center gap-8 text-gray-400 dark:text-gray-500 font-bold text-xs uppercase tracking-widest pb-8">
