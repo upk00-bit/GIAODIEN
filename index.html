@@ -32,31 +32,10 @@
         };
     </script>
 <style type="text/tailwindcss">
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .loto-grid {
-            display: grid;
-            grid-template-columns: repeat(9, 1fr);
-            gap: 4px;
-        }
-        .number-cell {
-            aspect-ratio: 1/1.2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.1rem;
-            transition: all 0.2s ease;
-        }.row-near-win {
-            background-color: theme('colors.warning-red');
-            border-radius: 4px;
-            margin: -2px;
-            padding: 2px;
-        }
-        .number.selected {
-  background-color: #f0f50a !important;
-  color: #111716 !important;
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
-}
+        cell.classList.toggle("bg-primary");
+cell.classList.toggle("ring-2");
+cell.classList.toggle("ring-primary");
+cell.classList.toggle("text-[#111716]");
     </style>
 <style>
     body {
@@ -107,7 +86,7 @@
 </div>
 </div>
 <div class="loto-grid">
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800"data-number="01">01</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">01</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">23</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
@@ -118,13 +97,13 @@
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">82</div>
 <div class="col-span-9 grid grid-cols-9 gap-[4px] bg-red-100/50 dark:bg-red-900/20 rounded-lg p-0.5">
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">12</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">12</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">34</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">34</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">51</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">51</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">75</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">75</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">90</div>
 </div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">05</div>
@@ -134,7 +113,7 @@
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">55</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">79</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">79</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">18</div>
@@ -149,7 +128,7 @@
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">11</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">45</div>
+<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">45</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">59</div>
 <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
 <div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">71</div>
@@ -289,6 +268,23 @@ document.querySelector("[data-next-ticket]").onclick = () => {
 ============================= */
 bindNumberClick();
 loadTicket(0);
+</script>
+<script>
+document.querySelectorAll('.number-cell').forEach(cell => {
+
+  // bỏ qua ô trống
+  if (cell.classList.contains('text-transparent')) return;
+
+  cell.addEventListener('click', () => {
+    cell.classList.toggle('bg-primary');
+    cell.classList.toggle('text-[#111716]');
+    cell.classList.toggle('ring-2');
+    cell.classList.toggle('ring-primary');
+    cell.classList.toggle('ring-offset-2');
+    cell.classList.toggle('dark:ring-offset-gray-800');
+  });
+
+});
 </script>
 
 </body></html>
