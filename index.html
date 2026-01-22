@@ -52,6 +52,11 @@
             margin: -2px;
             padding: 2px;
         }
+        .number.selected {
+  background-color: #f0f50a !important;
+  color: #111716 !important;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
+}
     </style>
 <style>
     body {
@@ -224,5 +229,66 @@
             </button>
 </div>
 </main>
+<script>
+/* =============================
+   DATA
+============================= */
+let currentTicket = 0;
+const TOTAL_TICKETS = 3;
+
+/* Lưu trạng thái tick theo ticket */
+const ticketMarks = Array.from({ length: TOTAL_TICKETS }, () => new Set());
+
+/* =============================
+   INIT CLICK
+============================= */
+function bindNumberClick() {
+  document.querySelectorAll(".number").forEach(cell => {
+    cell.onclick = () => {
+      const num = cell.dataset.number;
+
+      if (ticketMarks[currentTicket].has(num)) {
+        ticketMarks[currentTicket].delete(num);
+        cell.classList.remove("selected");
+      } else {
+        ticketMarks[currentTicket].add(num);
+        cell.classList.add("selected");
+      }
+    };
+  });
+}
+
+/* =============================
+   LOAD TICKET
+============================= */
+function loadTicket(ticketIndex) {
+  currentTicket = ticketIndex;
+
+  document.querySelectorAll(".number").forEach(cell => {
+    const num = cell.dataset.number;
+    cell.classList.toggle(
+      "selected",
+      ticketMarks[currentTicket].has(num)
+    );
+  });
+
+  document.querySelector("[data-ticket-title]").textContent =
+    `Ticket #${ticketIndex + 1}`;
+}
+
+/* =============================
+   NEXT TICKET BUTTON
+============================= */
+document.querySelector("[data-next-ticket]").onclick = () => {
+  const next = (currentTicket + 1) % TOTAL_TICKETS;
+  loadTicket(next);
+};
+
+/* =============================
+   INIT
+============================= */
+bindNumberClick();
+loadTicket(0);
+</script>
 
 </body></html>
