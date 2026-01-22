@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html class="light" lang="vi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Updated Loto Ticket Gameplay</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Updated Loto Ticket Gameplay</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -31,7 +36,7 @@
             }
         };
     </script>
-<style type="text/tailwindcss">
+    <style type="text/tailwindcss">
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .loto-grid {
             display: grid;
@@ -53,176 +58,291 @@
             padding: 2px;
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
 <body class="bg-background-light dark:bg-background-dark min-h-screen text-[#111716] dark:text-white font-display">
-<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm cursor-pointer">
-<span class="material-symbols-outlined">arrow_back</span>
-</div>
-<div>
-<h1 class="font-bold text-lg leading-none">Blue Variant #1</h1>
-<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">9x9 Vietnamese Style</p>
-</div>
-</div>
-<div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full shadow-sm">
-<span class="material-symbols-outlined text-primary text-xl">group</span>
-<span class="font-bold text-sm">1,248</span>
-</div>
-</div>
-<main class="max-w-md mx-auto p-4 space-y-4">
-<div class="flex gap-3">
-<div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border-b-4 border-primary/40">
-<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Calling</p>
-<div class="flex items-end gap-2">
-<span class="text-4xl font-extrabold text-[#111716] dark:text-white">45</span>
-<span class="text-xs font-bold mb-1.5 px-2 py-0.5 bg-primary/20 text-black rounded">New</span>
-</div>
-</div>
-<div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border-b-4 border-loto-blue/40">
-<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Last Number</p>
-<div class="flex items-end gap-2">
-<span class="text-4xl font-extrabold text-loto-blue">12</span>
-<span class="material-symbols-outlined mb-1.5 text-loto-blue/50">history</span>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700">
-<div class="bg-loto-blue text-white py-2 px-4 rounded-t-lg mb-2 flex justify-between items-center">
-<span class="text-xs font-black uppercase tracking-widest">Ticket ID: B-001-A</span>
-<div class="flex gap-1">
-<div class="w-2 h-2 rounded-full bg-white/40"></div>
-<div class="w-2 h-2 rounded-full bg-white"></div>
-<div class="w-2 h-2 rounded-full bg-white/40"></div>
-</div>
-</div>
-<div class="loto-grid">
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">01</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">23</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">48</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">62</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">82</div>
-<div class="col-span-9 grid grid-cols-9 gap-[4px] bg-red-100/50 dark:bg-red-900/20 rounded-lg p-0.5">
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">12</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">34</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">51</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">75</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">90</div>
-</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">05</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">27</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">39</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">55</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">79</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">18</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">30</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">42</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">68</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">88</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">09</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">11</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-primary text-[#111716] rounded shadow-sm ring-2 ring-primary ring-offset-2 dark:ring-offset-gray-800">45</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">59</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">71</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">15</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">29</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">49</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">60</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">84</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">03</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">22</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">36</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">53</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">72</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">17</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">31</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">40</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">64</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">81</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">07</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">19</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">44</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">57</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-<div class="number-cell bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600 rounded shadow-sm">77</div>
-<div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
-</div>
-</div>
-<div class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-<div class="flex -space-x-3">
-<img alt="User 1" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAol0nf4AtFXGeYHZ2mpIfCuVF_PmBzsPMUEjhCnFf5xnANOY7WpPlBMuY4XnCJiToTk7Sb4NZ06EPyF9Y134cS5gENLsRQp8XD-Kxr_nqJAGY91dmunE3VaHuIYkxe-AwHfh0GsTJdyJitNIOZP90XaUwDuha4eItx4T6w-rXkqcQrbBVexGA6N8-9uUALUEIah6Pc9kf3vmRDa--ZfK32gAs3owvmEgG6A_VhzVt33B9D_t-1kECCjoDwkgK1wVbflugcC5D2-do"/>
-<img alt="User 2" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhdjHk8WvnqkhRiYKcdt2q9ajjeeySlp675ix6yomHp7zMKn-KUdTJKVDiCj_djpsbuQENHRC-N8nvlrcypCDvoY0dMZRrqcs-NnSRTgBIRJKb1n6r5zI4RJgJatHnvmjwaGhOiXV_MXWUFnjG7XVCuADonMlRc7Tn8dmajdocPo6tH5QrVAIWvB7_-_IZLwqUlm4c78ZCySclH2X2nwkQmU87_zYqj4kXdWtXqiOQQWlKyNJ0T3Qp-_JGCXE06lpqynsF1mBzIds"/>
-<img alt="User 3" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuJrK4X7j6GKhhgZMCnrEd1I15biz1bZFZe-THI91wrBxZS52jsUh5PgW6tmz7oGsd4QSaM-3-pL93g0uOYHCtFpHNq5SHjnQBf4RJBF_ZHcvk_PaWiM01cbllGfsekk7kC6q7picxuT4Jvtl5ITH0V2l8HIqoDxMabeSa_umZnrRDY-sz6GAuuLsIEg6qCKnw0TvSZOiD5HeCe9B4LC9IEGKsQ0Ec6MS8rlu005Qu5k_XfgwfGu6WwZDHSmGXPGgM0LG1Z9_I_b0"/>
-<div class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800 bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-[10px] font-bold">+12</div>
-</div>
-<button class="bg-primary/20 text-[#111716] dark:text-white font-bold px-4 py-2 rounded-full flex items-center gap-2 hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-sm">chat_bubble</span>
+    <div
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+        <div class="flex items-center gap-3">
+            <div
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm cursor-pointer">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg leading-none">Blue Variant #1</h1>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">9x9 Vietnamese Style</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full shadow-sm">
+            <span class="material-symbols-outlined text-primary text-xl">group</span>
+            <span class="font-bold text-sm">1,248</span>
+        </div>
+    </div>
+    <main class="max-w-md mx-auto p-4 space-y-4">
+        <div class="flex gap-3">
+            <div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border-b-4 border-primary/40">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Calling</p>
+                <div class="flex items-end gap-2">
+                    <span class="text-4xl font-extrabold text-[#111716] dark:text-white">45</span>
+                    <span class="text-xs font-bold mb-1.5 px-2 py-0.5 bg-primary/20 text-black rounded">New</span>
+                </div>
+            </div>
+            <div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border-b-4 border-loto-blue/40">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Last Number</p>
+                <div class="flex items-end gap-2">
+                    <span class="text-4xl font-extrabold text-loto-blue">12</span>
+                    <span class="material-symbols-outlined mb-1.5 text-loto-blue/50">history</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700">
+            <div class="bg-loto-blue text-white py-2 px-4 rounded-t-lg mb-2 flex justify-between items-center">
+                <span class="text-xs font-black uppercase tracking-widest">Ticket ID: B-001-A</span>
+                <div class="flex gap-1">
+                    <div class="w-2 h-2 rounded-full bg-white/40"></div>
+                    <div class="w-2 h-2 rounded-full bg-white"></div>
+                    <div class="w-2 h-2 rounded-full bg-white/40"></div>
+                </div>
+            </div>
+            <div class="loto-grid">
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    01</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    23</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    48</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    62</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    82</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    12</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    34</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    51</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    75</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    90</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    05</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    27</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    39</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    55</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    79</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    18</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    30</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    42</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    68</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    88</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    09</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    11</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    45</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    59</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    71</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    15</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    29</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    49</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    60</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    84</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    03</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    22</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    36</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    53</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    72</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    17</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    31</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    40</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    64</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    81</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    07</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    19</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    44</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    57</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+                <div class="hover:bg-gray-300 number-cell bg-gray-50 dark:bg-gray-900/50 rounded cursor-pointer"
+                    onclick="toggleCell(this)">
+                    77</div>
+                <div class="number-cell bg-gray-50 dark:bg-gray-900/50 rounded text-transparent">.</div>
+            </div>
+        </div>
+        <div
+            class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+            <div class="flex -space-x-3">
+                <img alt="User 1" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAol0nf4AtFXGeYHZ2mpIfCuVF_PmBzsPMUEjhCnFf5xnANOY7WpPlBMuY4XnCJiToTk7Sb4NZ06EPyF9Y134cS5gENLsRQp8XD-Kxr_nqJAGY91dmunE3VaHuIYkxe-AwHfh0GsTJdyJitNIOZP90XaUwDuha4eItx4T6w-rXkqcQrbBVexGA6N8-9uUALUEIah6Pc9kf3vmRDa--ZfK32gAs3owvmEgG6A_VhzVt33B9D_t-1kECCjoDwkgK1wVbflugcC5D2-do" />
+                <img alt="User 2" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhdjHk8WvnqkhRiYKcdt2q9ajjeeySlp675ix6yomHp7zMKn-KUdTJKVDiCj_djpsbuQENHRC-N8nvlrcypCDvoY0dMZRrqcs-NnSRTgBIRJKb1n6r5zI4RJgJatHnvmjwaGhOiXV_MXWUFnjG7XVCuADonMlRc7Tn8dmajdocPo6tH5QrVAIWvB7_-_IZLwqUlm4c78ZCySclH2X2nwkQmU87_zYqj4kXdWtXqiOQQWlKyNJ0T3Qp-_JGCXE06lpqynsF1mBzIds" />
+                <img alt="User 3" class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuJrK4X7j6GKhhgZMCnrEd1I15biz1bZFZe-THI91wrBxZS52jsUh5PgW6tmz7oGsd4QSaM-3-pL93g0uOYHCtFpHNq5SHjnQBf4RJBF_ZHcvk_PaWiM01cbllGfsekk7kC6q7picxuT4Jvtl5ITH0V2l8HIqoDxMabeSa_umZnrRDY-sz6GAuuLsIEg6qCKnw0TvSZOiD5HeCe9B4LC9IEGKsQ0Ec6MS8rlu005Qu5k_XfgwfGu6WwZDHSmGXPGgM0LG1Z9_I_b0" />
+                <div
+                    class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800 bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-[10px] font-bold">
+                    +12</div>
+            </div>
+            <button
+                class="bg-primary/20 text-[#111716] dark:text-white font-bold px-4 py-2 rounded-full flex items-center gap-2 hover:bg-primary/30 transition-colors">
+                <span class="material-symbols-outlined text-sm">chat_bubble</span>
                 Chat
             </button>
-</div>
-<div class="grid grid-cols-2 gap-4 pt-4">
-<button class="bg-gray-200 dark:bg-gray-700 text-[#111716] dark:text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2">
-<span class="material-symbols-outlined">auto_fix</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 pt-4">
+            <button
+                class="bg-gray-200 dark:bg-gray-700 text-[#111716] dark:text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">auto_fix</span>
                 Auto-fill
             </button>
-<button class="bg-primary text-[#111716] font-black py-4 rounded-xl shadow-lg shadow-primary/40 flex items-center justify-center gap-2 text-xl tracking-tight">
+            <button
+                class="bg-primary text-[#111716] font-black py-4 rounded-xl shadow-lg shadow-primary/40 flex items-center justify-center gap-2 text-xl tracking-tight">
                 KINH!
                 <span class="material-symbols-outlined">celebration</span>
-</button>
-</div>
-<div class="flex justify-center gap-8 text-gray-400 dark:text-gray-500 font-bold text-xs uppercase tracking-widest pb-8">
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined">visibility</span>
+            </button>
+        </div>
+        <div
+            class="flex justify-center gap-8 text-gray-400 dark:text-gray-500 font-bold text-xs uppercase tracking-widest pb-8">
+            <button class="flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined">visibility</span>
                 Check Missed
             </button>
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined">style</span>
+            <button class="flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined">style</span>
                 Next Ticket
             </button>
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined">help_outline</span>
+            <button class="flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined">help_outline</span>
                 Rules
             </button>
-</div>
-</main>
+        </div>
+    </main>
 
-</body></html>
+    <script>
+        function toggleCell(element) {
+            if (element.classList.contains('bg-primary')) {
+                element.classList.remove('bg-primary', 'text-[#111716]', 'shadow-sm', 'ring-2', 'ring-primary', 'ring-offset-2', 'dark:ring-offset-gray-800');
+                element.classList.add('bg-gray-50', 'dark:bg-gray-900/50');
+            } else {
+                element.classList.remove('bg-gray-50', 'dark:bg-gray-900/50');
+                element.classList.add('bg-primary', 'text-[#111716]', 'shadow-sm', 'ring-2', 'ring-primary', 'ring-offset-2', 'dark:ring-offset-gray-800');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
